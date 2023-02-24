@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C512A4DF29A5FEC200F74D4C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4DE29A5FEC200F74D4C /* MainView.swift */; };
+		C512A4E129A5FEE000F74D4C /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4E029A5FEE000F74D4C /* DeliveryView.swift */; };
+		C512A4E329A6002800F74D4C /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4E229A6002800F74D4C /* CartView.swift */; };
+		C550688029A4879800B0884A /* JustEatQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550687F29A4879800B0884A /* JustEatQApp.swift */; };
+		C550688229A4879800B0884A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550688129A4879800B0884A /* ContentView.swift */; };
+		C550688429A4879A00B0884A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C550688329A4879A00B0884A /* Assets.xcassets */; };
+		C550688729A4879A00B0884A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C550688629A4879A00B0884A /* Preview Assets.xcassets */; };
+		C550688929A4879A00B0884A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550688829A4879A00B0884A /* Persistence.swift */; };
+		C550688C29A4879A00B0884A /* JustEatQ.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C550688A29A4879A00B0884A /* JustEatQ.xcdatamodeld */; };
+		C550689329A487DC00B0884A /* JETextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689229A487DC00B0884A /* JETextField.swift */; };
+		C550689529A488A300B0884A /* JEDateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689429A488A300B0884A /* JEDateField.swift */; };
+		C550689729A4892100B0884A /* JESecuredField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689629A4892100B0884A /* JESecuredField.swift */; };
+		C550689929A4898A00B0884A /* JEPasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689829A4898A00B0884A /* JEPasswordField.swift */; };
+		C550689B29A48D1A00B0884A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689A29A48D1A00B0884A /* LoginView.swift */; };
+		C550689D29A490B500B0884A /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689C29A490B500B0884A /* PrimaryButton.swift */; };
+		C550689F29A4918B00B0884A /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550689E29A4918B00B0884A /* SecondaryButton.swift */; };
+		C55068A129A496D800B0884A /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068A029A496D800B0884A /* SignupView.swift */; };
+		C55068A329A4A89C00B0884A /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068A229A4A89C00B0884A /* GetStartedView.swift */; };
+		C55068CA29A4C31C00B0884A /* GroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068C929A4C31C00B0884A /* GroceryView.swift */; };
+		C55068CC29A5D68A00B0884A /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068CB29A5D68A00B0884A /* UIComponents.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C512A4DE29A5FEC200F74D4C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C512A4E029A5FEE000F74D4C /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
+		C512A4E229A6002800F74D4C /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		C550687C29A4879800B0884A /* JustEatQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustEatQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C550687F29A4879800B0884A /* JustEatQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEatQApp.swift; sourceTree = "<group>"; };
+		C550688129A4879800B0884A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C550688329A4879A00B0884A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C550688629A4879A00B0884A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C550688829A4879A00B0884A /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		C550688B29A4879A00B0884A /* JustEatQ.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JustEatQ.xcdatamodel; sourceTree = "<group>"; };
+		C550689229A487DC00B0884A /* JETextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JETextField.swift; sourceTree = "<group>"; };
+		C550689429A488A300B0884A /* JEDateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEDateField.swift; sourceTree = "<group>"; };
+		C550689629A4892100B0884A /* JESecuredField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JESecuredField.swift; sourceTree = "<group>"; };
+		C550689829A4898A00B0884A /* JEPasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JEPasswordField.swift; sourceTree = "<group>"; };
+		C550689A29A48D1A00B0884A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C550689C29A490B500B0884A /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		C550689E29A4918B00B0884A /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		C55068A029A496D800B0884A /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		C55068A229A4A89C00B0884A /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		C55068C929A4C31C00B0884A /* GroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryView.swift; sourceTree = "<group>"; };
+		C55068CB29A5D68A00B0884A /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C550687929A4879800B0884A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C550687329A4879800B0884A = {
+			isa = PBXGroup;
+			children = (
+				C550687E29A4879800B0884A /* JustEatQ */,
+				C550687D29A4879800B0884A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C550687D29A4879800B0884A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C550687C29A4879800B0884A /* JustEatQ.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C550687E29A4879800B0884A /* JustEatQ */ = {
+			isa = PBXGroup;
+			children = (
+				C55068A029A496D800B0884A /* SignupView.swift */,
+				C55068A229A4A89C00B0884A /* GetStartedView.swift */,
+				C550687F29A4879800B0884A /* JustEatQApp.swift */,
+				C550688129A4879800B0884A /* ContentView.swift */,
+				C550689829A4898A00B0884A /* JEPasswordField.swift */,
+				C55068C929A4C31C00B0884A /* GroceryView.swift */,
+				C512A4E029A5FEE000F74D4C /* DeliveryView.swift */,
+				C512A4DE29A5FEC200F74D4C /* MainView.swift */,
+				C512A4E229A6002800F74D4C /* CartView.swift */,
+				C55068CB29A5D68A00B0884A /* UIComponents.swift */,
+				C550689A29A48D1A00B0884A /* LoginView.swift */,
+				C550689C29A490B500B0884A /* PrimaryButton.swift */,
+				C550689E29A4918B00B0884A /* SecondaryButton.swift */,
+				C550689229A487DC00B0884A /* JETextField.swift */,
+				C550689629A4892100B0884A /* JESecuredField.swift */,
+				C550689429A488A300B0884A /* JEDateField.swift */,
+				C550688329A4879A00B0884A /* Assets.xcassets */,
+				C550688829A4879A00B0884A /* Persistence.swift */,
+				C550688A29A4879A00B0884A /* JustEatQ.xcdatamodeld */,
+				C550688529A4879A00B0884A /* Preview Content */,
+			);
+			path = JustEatQ;
+			sourceTree = "<group>";
+		};
+		C550688529A4879A00B0884A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C550688629A4879A00B0884A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C550687B29A4879800B0884A /* JustEatQ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C550688F29A4879A00B0884A /* Build configuration list for PBXNativeTarget "JustEatQ" */;
+			buildPhases = (
+				C550687829A4879800B0884A /* Sources */,
+				C550687929A4879800B0884A /* Frameworks */,
+				C550687A29A4879800B0884A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JustEatQ;
+			productName = JustEatQ;
+			productReference = C550687C29A4879800B0884A /* JustEatQ.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C550687429A4879800B0884A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					C550687B29A4879800B0884A = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = C550687729A4879800B0884A /* Build configuration list for PBXProject "JustEatQ" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C550687329A4879800B0884A;
+			productRefGroup = C550687D29A4879800B0884A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C550687B29A4879800B0884A /* JustEatQ */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C550687A29A4879800B0884A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C550688729A4879A00B0884A /* Preview Assets.xcassets in Resources */,
+				C550688429A4879A00B0884A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C550687829A4879800B0884A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C512A4E329A6002800F74D4C /* CartView.swift in Sources */,
+				C55068A129A496D800B0884A /* SignupView.swift in Sources */,
+				C550689F29A4918B00B0884A /* SecondaryButton.swift in Sources */,
+				C55068CA29A4C31C00B0884A /* GroceryView.swift in Sources */,
+				C512A4E129A5FEE000F74D4C /* DeliveryView.swift in Sources */,
+				C550688929A4879A00B0884A /* Persistence.swift in Sources */,
+				C550689329A487DC00B0884A /* JETextField.swift in Sources */,
+				C550689D29A490B500B0884A /* PrimaryButton.swift in Sources */,
+				C550688229A4879800B0884A /* ContentView.swift in Sources */,
+				C550689B29A48D1A00B0884A /* LoginView.swift in Sources */,
+				C550689529A488A300B0884A /* JEDateField.swift in Sources */,
+				C512A4DF29A5FEC200F74D4C /* MainView.swift in Sources */,
+				C550689729A4892100B0884A /* JESecuredField.swift in Sources */,
+				C550688C29A4879A00B0884A /* JustEatQ.xcdatamodeld in Sources */,
+				C55068A329A4A89C00B0884A /* GetStartedView.swift in Sources */,
+				C550689929A4898A00B0884A /* JEPasswordField.swift in Sources */,
+				C55068CC29A5D68A00B0884A /* UIComponents.swift in Sources */,
+				C550688029A4879800B0884A /* JustEatQApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C550688D29A4879A00B0884A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C550688E29A4879A00B0884A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C550689029A4879A00B0884A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JustEatQ/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arsenic.JustEatQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C550689129A4879A00B0884A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"JustEatQ/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.arsenic.JustEatQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C550687729A4879800B0884A /* Build configuration list for PBXProject "JustEatQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C550688D29A4879A00B0884A /* Debug */,
+				C550688E29A4879A00B0884A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C550688F29A4879A00B0884A /* Build configuration list for PBXNativeTarget "JustEatQ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C550689029A4879A00B0884A /* Debug */,
+				C550689129A4879A00B0884A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C550688A29A4879A00B0884A /* JustEatQ.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C550688B29A4879A00B0884A /* JustEatQ.xcdatamodel */,
+			);
+			currentVersion = C550688B29A4879A00B0884A /* JustEatQ.xcdatamodel */;
+			path = JustEatQ.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C550687429A4879800B0884A /* Project object */;
+}
