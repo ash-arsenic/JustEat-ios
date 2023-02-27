@@ -114,8 +114,10 @@ struct CartItemsRows: View {
 
 struct SectionHeader: View {
     var heading: String
-    init(heading: String) {
+    var width: CGFloat?
+    init(heading: String, width: CGFloat?) {
         self.heading = heading
+        self.width = width
     }
     var body: some View {
         HStack { // Section Heading
@@ -124,7 +126,7 @@ struct SectionHeader: View {
             }
             Text(heading)
                 .kerning(2)
-                .frame(width: 150)
+                .frame(width: (width ?? 150))
             VStack {
                 Divider()
             }

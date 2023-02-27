@@ -14,8 +14,8 @@
             filePath = "JustEatQ/CartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "deleteCartItem(id:)"
             landmarkType = "7">
          </BreakpointContent>
