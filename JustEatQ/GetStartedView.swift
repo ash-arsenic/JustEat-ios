@@ -10,8 +10,8 @@ import SwiftUI
 struct GetStartedView: View {
     @State private var loginIsActive = false
     @State private var signUpIsActive = false
+    
     var body: some View {
-        NavigationView{
             ZStack{
                 Color("PrimaryColor").ignoresSafeArea()
                 VStack{
@@ -41,8 +41,6 @@ struct GetStartedView: View {
                         Spacer()
                         Image("GetStartedImage2").resizable().scaledToFill().frame(width: 150, height: 150)
                     }
-                }
-            
             }
         }
     }

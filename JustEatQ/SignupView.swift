@@ -90,6 +90,8 @@ struct SignupView: View {
                     if validateName(name: nameTF) && validateEmail(email: emailTF) && validDate(day: ddTF, month: mmTF, year: yyTF) && validatePswd(pswd: pswdTF) {
                         UserDefaults.standard.set(emailTF, forKey: "userEmail")
                         UserDefaults.standard.set(pswdTF, forKey: "userPswd")
+                        UserDefaults.standard.set(nameTF, forKey: "userName")
+                        UserDefaults.standard.set(ddTF + mmTF + yyTF, forKey: "userDOB")
                         showAlert = true
                     }
                 }.alert("Signed Up Successfully", isPresented: $showAlert) {

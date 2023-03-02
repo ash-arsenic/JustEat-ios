@@ -9,8 +9,12 @@ import SwiftUI
 
 struct MainView: View {
     @State private var tabSelected = 0
+    
+    let userName: String
+    let userEmail: String
+    
     var body: some View {
-        NavigationView {
+//        NavigationView {
             TabView(selection: $tabSelected) {
                 DeliveryView()
                     .tabItem {
@@ -24,13 +28,17 @@ struct MainView: View {
                     .tabItem {
                         Label("Cart", systemImage: "cart.fill")
                     }.tag(2)
+                ProfileView(name: userName, email: userEmail)
+                    .tabItem {
+                        Label("Profile", systemImage: "person.fill")
+                    }.tag(3)
             }
-        }
+//        }
     }
 }
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(userName: "Shanaya", userEmail: "shanayasinha3577@gmail.com")
     }
 }

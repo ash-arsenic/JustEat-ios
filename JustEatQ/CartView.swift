@@ -22,7 +22,7 @@ struct CartView: View {
     @Binding var tabSelected: Int
     
     //    For estimated time
-    @State private var estimatedDistance = 12
+    @State private var estimatedDistance = 4
     
     //    Sample Data for list
     @State private var items = [CartItem(name: "Belgian Brownie Thick Shake", veg: true, price: 310.0, quantity: "[500 Ml]", counter: 1, totalPrice: 310.0),
@@ -31,7 +31,7 @@ struct CartView: View {
     @State private var currentCartItemId: UUID?
     
 //    For delivery distance
-    @State private var deliveryDistance = 6
+    @State private var deliveryDistance = 4
     
     //    For showing optional views
     @State private var cartIsEmpty = false
@@ -230,7 +230,7 @@ struct CartView: View {
                                     if showBillInfo {
                                         VStack(alignment: .leading) {
                                             HStack {
-                                                Text("Base fee upto 4 km")
+                                                Text("Base fee upto 5 km")
                                                 Spacer()
                                                 Text("₹31")
                                             }.font(.callout)

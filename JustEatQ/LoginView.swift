@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @EnvironmentObject var userSettings: UserSettings
+    
     @State private var emailShowError = false
     @State private var emailTF = ""
     @FocusState private var emailFocused
@@ -19,7 +21,9 @@ struct LoginView: View {
     
     @State private var showAlert = false
     @State private var showAlertMSG = "Logged In Successfully"
-                
+    
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -46,11 +50,14 @@ struct LoginView: View {
                 
                 PrimaryButton(btnTitle: "LogIn") {
                     if authenticateUser(email: emailTF, pswd: pswdTF) {
-                        showAlertMSG = "Logged In Successfully"
+//                        loggedIn = true
+                        userSettings.signIn()
+                        UserDefaults.standard.set(true, forKey: "loggedIn")
+//                        print("Login view: \(settings.loggedIn)")
                     } else {
                         showAlertMSG = "Invalid Credentials"
+                        showAlert = true
                     }
-                    showAlert = true
                 }.alert(showAlertMSG, isPresented: $showAlert) {
                     Button("OK", role: .cancel) {}
                 }.padding()

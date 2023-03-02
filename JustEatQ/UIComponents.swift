@@ -102,10 +102,6 @@ struct CartItemsRows: View {
                         RoundedRectangle(cornerRadius: 8, style: .continuous)
                             .stroke(Color("PrimaryColor"), lineWidth: 2)
                     )
-                
-//                Text("₹" + String(item.price*Double(cartItemCount)))
-//                    .fontWeight(.semibold)
-//                    .font(.subheadline)
             }
         }
         .padding()
@@ -134,9 +130,84 @@ struct SectionHeader: View {
     }
 }
 
+struct DeliveryRow: View {
+    var restraunt: Restraunt
+    @State private var isFav = false
+    
+    var body: some View {
+        VStack {
+            VStack {
+                HStack {
+                    Text("\(restraunt.dishes[restraunt.dishes.startIndex].name) ◦ ₹\(restraunt.dishes[restraunt.dishes.startIndex].price, specifier: "%.1f")")
+                        .font(.caption.weight(.semibold))
+                        .padding(.horizontal, 8).padding(.vertical, 4)
+                        .background(Color.black.opacity(0.7))
+                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 3))
+                        .cornerRadius(8)
+                        .foregroundColor(.white)
+                    Spacer()
+                    Button(action: {
+                        isFav = !isFav
+                    }, label: {
+                        if isFav {
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                                .font(.title2)
+                        } else {
+                            Image(systemName: "heart")
+                                .foregroundColor(.white)
+                                .font(.title2)
+                        }
+                    })
+                }
+                Spacer()
+                HStack {
+                    VStack {
+                        HStack {
+                            Text(restraunt.name).foregroundColor(.white)
+                                .font(.title.weight(.heavy))
+                            Spacer()
+                        }
+                        HStack {
+                            Text(restraunt.category.joined(separator: " ◦ ")).foregroundColor(.white)
+                                .font(.subheadline)
+                            Spacer()
+                        }
+                    }
+                    Spacer()
+                    VStack {
+                        Text("\(restraunt.ratings, specifier: "%.1f") ★")
+                            .fontWeight(.bold)
+                            .padding(8)
+                            .background(Color(hue: 0.272, saturation: 0.927, brightness: 0.488))
+                            .cornerRadius(10)
+                            .foregroundColor(.white)
+                    }
+                }
+            }.padding()
+            .frame(height: UIScreen.main.bounds.height * 0.25)
+            .background(Image("SampleImage")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: UIScreen.main.bounds.height * 0.25)
+                .clipped())
+            HStack {
+                Image(systemName: "stopwatch")
+                Text("\(restraunt.getEstimatedTime()) ◦ \(restraunt.distance, specifier: "") km")
+                Spacer()
+                Text("₹\(restraunt.dishes[restraunt.dishes.startIndex].price, specifier: "%.1f") for one")
+            }.padding()
+                .font(.subheadline.weight(.medium))
+        }.background(.white)
+        .cornerRadius(20)
+        .shadow(radius: 30)
+    }
+}
+
 struct UIComponents_Previews: PreviewProvider {
     static var previews: some View {
-        GroceryList("GroceryIcon1", "Enjoy 5000+ products to suit", "your needs")
+        DeliveryRow(restraunt: Restraunt(name: "Cake 'O' Clocks", category: ["Deserts", "Bakery"], ratings: 4.2, distance: 4, dishes: [Food(name: "Strawberry Cake", price: 130.0)]))
+//        GroceryList("GroceryIcon1", "Enjoy 5000+ products to suit", "your needs")
 //        CartItemsRows(CartItem(name: "Belgian Brownie Thick Shake", veg: false, price: 310.0, quantity: "[500 Ml]", counter: 1), cartItemCount: 1)
     }
 }

@@ -27,6 +27,9 @@
 		C55068A329A4A89C00B0884A /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068A229A4A89C00B0884A /* GetStartedView.swift */; };
 		C55068CA29A4C31C00B0884A /* GroceryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068C929A4C31C00B0884A /* GroceryView.swift */; };
 		C55068CC29A5D68A00B0884A /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068CB29A5D68A00B0884A /* UIComponents.swift */; };
+		C5CE3EE929AC980200B37F77 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE3EE829AC980200B37F77 /* ProfileView.swift */; };
+		C5CE3EED29ADBDB100B37F77 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE3EEC29ADBDB100B37F77 /* UserSettings.swift */; };
+		C5CE3EF729AF526400B37F77 /* RestrauntModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE3EF629AF526400B37F77 /* RestrauntModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +54,9 @@
 		C55068A229A4A89C00B0884A /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		C55068C929A4C31C00B0884A /* GroceryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryView.swift; sourceTree = "<group>"; };
 		C55068CB29A5D68A00B0884A /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
+		C5CE3EE829AC980200B37F77 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C5CE3EEC29ADBDB100B37F77 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		C5CE3EF629AF526400B37F77 /* RestrauntModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrauntModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,16 +89,19 @@
 		C550687E29A4879800B0884A /* JustEatQ */ = {
 			isa = PBXGroup;
 			children = (
+				C550687F29A4879800B0884A /* JustEatQApp.swift */,
+				C5CE3EEC29ADBDB100B37F77 /* UserSettings.swift */,
 				C55068A029A496D800B0884A /* SignupView.swift */,
 				C55068A229A4A89C00B0884A /* GetStartedView.swift */,
-				C550687F29A4879800B0884A /* JustEatQApp.swift */,
 				C550688129A4879800B0884A /* ContentView.swift */,
 				C550689829A4898A00B0884A /* JEPasswordField.swift */,
 				C55068C929A4C31C00B0884A /* GroceryView.swift */,
 				C512A4E029A5FEE000F74D4C /* DeliveryView.swift */,
 				C512A4DE29A5FEC200F74D4C /* MainView.swift */,
 				C512A4E229A6002800F74D4C /* CartView.swift */,
+				C5CE3EE829AC980200B37F77 /* ProfileView.swift */,
 				C55068CB29A5D68A00B0884A /* UIComponents.swift */,
+				C5CE3EF629AF526400B37F77 /* RestrauntModel.swift */,
 				C550689A29A48D1A00B0884A /* LoginView.swift */,
 				C550689C29A490B500B0884A /* PrimaryButton.swift */,
 				C550689E29A4918B00B0884A /* SecondaryButton.swift */,
@@ -195,12 +204,15 @@
 				C550689D29A490B500B0884A /* PrimaryButton.swift in Sources */,
 				C550688229A4879800B0884A /* ContentView.swift in Sources */,
 				C550689B29A48D1A00B0884A /* LoginView.swift in Sources */,
+				C5CE3EF729AF526400B37F77 /* RestrauntModel.swift in Sources */,
 				C550689529A488A300B0884A /* JEDateField.swift in Sources */,
 				C512A4DF29A5FEC200F74D4C /* MainView.swift in Sources */,
 				C550689729A4892100B0884A /* JESecuredField.swift in Sources */,
+				C5CE3EED29ADBDB100B37F77 /* UserSettings.swift in Sources */,
 				C550688C29A4879A00B0884A /* JustEatQ.xcdatamodeld in Sources */,
 				C55068A329A4A89C00B0884A /* GetStartedView.swift in Sources */,
 				C550689929A4898A00B0884A /* JEPasswordField.swift in Sources */,
+				C5CE3EE929AC980200B37F77 /* ProfileView.swift in Sources */,
 				C55068CC29A5D68A00B0884A /* UIComponents.swift in Sources */,
 				C550688029A4879800B0884A /* JustEatQApp.swift in Sources */,
 			);
