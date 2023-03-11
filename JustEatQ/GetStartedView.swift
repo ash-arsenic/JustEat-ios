@@ -24,22 +24,32 @@ struct GetStartedView: View {
                             .padding(.trailing, -40)
                     }
                     Spacer()
-                    Text("Food For You")
-                    Text("With Greatest Ingredients")
+                    HStack {
+                        Text("Food For").padding(.trailing, -2)
+                        Text("Y").foregroundColor(Color.white)
+                        Text("ou").padding(.leading, -10)
+                    }.font(.title.weight(.bold))
+                    .foregroundColor(Color("TertiaryColor"))
+                    
+                    HStack {
+                        Text("With Greatest Ingredients").fontWeight(.semibold)
+                            .kerning(4).foregroundColor(Color.white)
+                    }
+                    
                     NavigationLink(destination: LoginView() ,isActive: $loginIsActive ){
                         SecondaryButton(btnTitle: "Log In"){
                             loginIsActive = true
-                        }.padding(.horizontal, 20)
+                        }.padding().padding(.horizontal, 12)
                     }
                     NavigationLink(destination: SignupView(), isActive: $signUpIsActive){
                         PrimaryButton(btnTitle: "Sign Up"){
                             signUpIsActive = true
-                        }.padding(.horizontal, 20)
+                        }.padding(.horizontal, 12).padding(.horizontal)
                     }
                     Spacer()
                     HStack{
                         Spacer()
-                        Image("GetStartedImage2").resizable().scaledToFill().frame(width: 150, height: 150)
+                        Image("GetStartedImage2").resizable().scaledToFill().frame(width: 200, height: 180)
                     }
             }
         }

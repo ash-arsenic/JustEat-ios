@@ -31,22 +31,22 @@ struct LoginView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(height: 200)
-                    .padding(.vertical, 20)
+                    .padding(.vertical, 40)
                     .cornerRadius(20)
-                    .padding()
                 
                 JETextField("Email", text: $emailTF, showError: $emailShowError)
                     .focused($emailFocused)
                     .onSubmit {
                         emailShowError = !validateEmail(email: emailTF)
                         pswdFocused.toggle()
-                    }
+                    }.padding(.vertical, 4)
                 
                 JEPasswordField("Password", text: $pswdTF, showError: $pswdShowError)
                     .focused($pswdFocused)
                     .onSubmit {
                         pswdShowError = !validatePswd(pswd: pswdTF)
-                    }
+                        pswdFocused.toggle()
+                    }.padding(.vertical, 4)
                 
                 PrimaryButton(btnTitle: "LogIn") {
                     if authenticateUser(email: emailTF, pswd: pswdTF) {
@@ -60,9 +60,9 @@ struct LoginView: View {
                     }
                 }.alert(showAlertMSG, isPresented: $showAlert) {
                     Button("OK", role: .cancel) {}
-                }.padding()
+                }.padding(.vertical)
             }.padding(32)
-        }
+        }.navigationBarTitle("Sign In", displayMode: .inline)
     }
     func validateEmail(email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

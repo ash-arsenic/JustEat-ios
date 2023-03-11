@@ -17,13 +17,4 @@ class UserSettings: ObservableObject {
     func signOut() {
         loggedIn = false
     }
-//    @Published var loggedIn: Bool {
-//        didSet {
-//            UserDefaults.standard.set(loggedIn, forKey: "loggedIn")
-//        }
-//    }
-//
-//    init() {
-//        loggedIn = false
-//    }
 }

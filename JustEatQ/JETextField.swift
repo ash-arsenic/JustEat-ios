@@ -40,6 +40,7 @@ struct JETextField: View {
             if showLabel {
                 HStack {
                     Text(title)
+                        .foregroundColor(Color("TertiaryColor"))
                         .padding(.horizontal, 5)
                         .background(Color.white)
                     Spacer()

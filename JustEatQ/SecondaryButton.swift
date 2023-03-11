@@ -16,6 +16,7 @@ struct SecondaryButton: View {
         },label: {
             Spacer()
             Text(btnTitle)
+                .font(.title3.weight(.semibold))
             Spacer()
         })
         .padding()

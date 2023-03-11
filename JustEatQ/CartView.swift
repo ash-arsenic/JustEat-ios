@@ -79,7 +79,7 @@ struct CartView: View {
                                 Text(calculateTime(distance: estimatedDistance))
                                     .fontWeight(.bold)
                                 Spacer()
-                            }
+                            }.font(.subheadline)
                             .padding()
                             .background(Color.white)
                             .cornerRadius(15)

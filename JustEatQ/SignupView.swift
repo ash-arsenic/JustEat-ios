@@ -40,67 +40,68 @@ struct SignupView: View {
                     .frame(height: 200)
                     .padding(.vertical, 20)
                     .cornerRadius(20)
-                    .padding()
                 
                 JETextField("Email", text: $emailTF, showError: $emailShowError)
                     .focused($emailFocused)
                     .onSubmit {
                         emailShowError = !validateEmail(email: emailTF)
                         nameFocused.toggle()
-                    }
+                    }.padding(.vertical, 4)
                 
                 JETextField("Name", text: $nameTF, showError: $nameShowError)
                     .focused($nameFocused)
                     .onSubmit {
                         nameShowError = !validateName(name: nameTF)
                         dateFocused.toggle()
-                    }
+                    }.padding(.vertical, 4)
                 
                 JEDateField(ddTF: $ddTF, mmTF: $mmTF, yyTF: $yyTF, showError: $dateShowError)
                     .focused($dateFocused)
                     .onSubmit {
                         dateShowError = !validDate(day: ddTF, month: mmTF, year: yyTF)
                         pswdFocused.toggle()
-                    }
+                    }.padding(.vertical, 4)
                 
                 JEPasswordField("Password", text: $pswdTF, showError: $pswdShowError)
                     .focused($pswdFocused)
                     .onSubmit {
                         pswdShowError = !validatePswd(pswd: pswdTF)
-                    }
+                    }.padding(.vertical, 4)
                 
                 PrimaryButton(btnTitle: "SignUp") {
-                    if !validateName(name: nameTF) {
-                        nameShowError = true
-                        //                    nameFocused.toggle()
-                    }
-                    if !validateEmail(email: emailTF) {
+                    if validateEmail(email: emailTF) {
+                        if validateName(name: nameTF) {
+                            if validDate(day: ddTF, month: mmTF, year: yyTF) {
+                                if validatePswd(pswd: pswdTF) {
+                                    UserDefaults.standard.set(emailTF, forKey: "userEmail")
+                                    UserDefaults.standard.set(pswdTF, forKey: "userPswd")
+                                    UserDefaults.standard.set(nameTF, forKey: "userName")
+                                    UserDefaults.standard.set(ddTF + mmTF + yyTF, forKey: "userDOB")
+                                    showAlert = true
+                                } else {
+                                    pswdShowError = true
+                                    pswdFocused.toggle()
+                                }
+                            } else {
+                                dateShowError = true
+                                dateFocused.toggle()
+                            }
+                        } else {
+                            nameShowError = true
+                            nameFocused.toggle()
+                        }
+                    } else {
                         emailShowError = true
-                        //                    emailFocused.toggle()
+                        emailFocused.toggle()
                     }
-                    if !validDate(day: ddTF, month: mmTF, year: yyTF) {
-                        dateShowError = true
-                        //                    dateFocused.toggle()
-                    }
-                    if !validatePswd(pswd: pswdTF) {
-                        pswdShowError = true
-                        //                    pswdFocused.toggle()
-                    }
-                    
-                    if validateName(name: nameTF) && validateEmail(email: emailTF) && validDate(day: ddTF, month: mmTF, year: yyTF) && validatePswd(pswd: pswdTF) {
-                        UserDefaults.standard.set(emailTF, forKey: "userEmail")
-                        UserDefaults.standard.set(pswdTF, forKey: "userPswd")
-                        UserDefaults.standard.set(nameTF, forKey: "userName")
-                        UserDefaults.standard.set(ddTF + mmTF + yyTF, forKey: "userDOB")
-                        showAlert = true
-                    }
-                }.alert("Signed Up Successfully", isPresented: $showAlert) {
+                }.padding(.vertical)
+                .alert("Signed Up Successfully", isPresented: $showAlert) {
                     Button("OK", role: .cancel) {
                         self.presentation.wrappedValue.dismiss()
                     }
-                }.padding()
+                }
             }.padding(32)
-        }
+        }.navigationBarTitle("Sign Up", displayMode: .inline)
     }
     func validateEmail(email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

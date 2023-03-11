@@ -100,6 +100,7 @@ struct JEDateField: View {
             if ddFocus || mmFocus || yyFocus {
                 HStack {
                     Text("Date of Birth")
+                        .foregroundColor(Color("TertiaryColor"))
                         .padding(.horizontal, 5)
                         .background(Color.white)
                     Spacer()

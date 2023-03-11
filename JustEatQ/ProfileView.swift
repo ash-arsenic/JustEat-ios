@@ -13,14 +13,9 @@ struct ProfileView: View {
     
     @State private var showLoagoutDialog = false
     
-    var name: String
-    var email: String
+    private var name = UserDefaults.standard.value(forKey: "userName") as? String ?? "Shanaya"
+    private var email = UserDefaults.standard.value(forKey: "userEmail") as? String ?? "shanayasinha8077@gmail.com"
     
-    init(name: String, email: String) {
-        self.name = name
-        self.email = email
-    }
-
     var body: some View {
         VStack{
             HStack { // Header profile details
@@ -151,6 +146,6 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(name: "Shanaya", email: "shanayasinha8577@gmail.com")
+        ProfileView()
     }
 }

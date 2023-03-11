@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C50680ED29BA41C6003E6740 /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50680EC29BA41C6003E6740 /* ApiData.swift */; };
 		C512A4DF29A5FEC200F74D4C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4DE29A5FEC200F74D4C /* MainView.swift */; };
 		C512A4E129A5FEE000F74D4C /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4E029A5FEE000F74D4C /* DeliveryView.swift */; };
 		C512A4E329A6002800F74D4C /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4E229A6002800F74D4C /* CartView.swift */; };
+		C51CB59629B5CC2D0082B32A /* DishRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB59529B5CC2D0082B32A /* DishRow.swift */; };
+		C51CB59829B5DC2B0082B32A /* RestrauntItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB59729B5DC2B0082B32A /* RestrauntItems.swift */; };
+		C51CB59C29B707690082B32A /* JENavidationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB59B29B707690082B32A /* JENavidationBar.swift */; };
+		C51CB5A029B729910082B32A /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB59F29B729910082B32A /* HotelModel.swift */; };
+		C51CB5A229B72CA20082B32A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB5A129B72CA20082B32A /* NetworkManager.swift */; };
+		C51CB5A429B7317F0082B32A /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB5A329B7317F0082B32A /* DishModel.swift */; };
 		C550688029A4879800B0884A /* JustEatQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550687F29A4879800B0884A /* JustEatQApp.swift */; };
 		C550688229A4879800B0884A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550688129A4879800B0884A /* ContentView.swift */; };
 		C550688429A4879A00B0884A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C550688329A4879A00B0884A /* Assets.xcassets */; };
@@ -29,13 +36,19 @@
 		C55068CC29A5D68A00B0884A /* UIComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55068CB29A5D68A00B0884A /* UIComponents.swift */; };
 		C5CE3EE929AC980200B37F77 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE3EE829AC980200B37F77 /* ProfileView.swift */; };
 		C5CE3EED29ADBDB100B37F77 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE3EEC29ADBDB100B37F77 /* UserSettings.swift */; };
-		C5CE3EF729AF526400B37F77 /* RestrauntModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CE3EF629AF526400B37F77 /* RestrauntModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C50680EC29BA41C6003E6740 /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		C512A4DE29A5FEC200F74D4C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C512A4E029A5FEE000F74D4C /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
 		C512A4E229A6002800F74D4C /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
+		C51CB59529B5CC2D0082B32A /* DishRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishRow.swift; sourceTree = "<group>"; };
+		C51CB59729B5DC2B0082B32A /* RestrauntItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrauntItems.swift; sourceTree = "<group>"; };
+		C51CB59B29B707690082B32A /* JENavidationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JENavidationBar.swift; sourceTree = "<group>"; };
+		C51CB59F29B729910082B32A /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
+		C51CB5A129B72CA20082B32A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C51CB5A329B7317F0082B32A /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
 		C550687C29A4879800B0884A /* JustEatQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustEatQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C550687F29A4879800B0884A /* JustEatQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEatQApp.swift; sourceTree = "<group>"; };
 		C550688129A4879800B0884A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +69,6 @@
 		C55068CB29A5D68A00B0884A /* UIComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponents.swift; sourceTree = "<group>"; };
 		C5CE3EE829AC980200B37F77 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C5CE3EEC29ADBDB100B37F77 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		C5CE3EF629AF526400B37F77 /* RestrauntModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestrauntModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,18 +107,24 @@
 				C55068A229A4A89C00B0884A /* GetStartedView.swift */,
 				C550688129A4879800B0884A /* ContentView.swift */,
 				C550689829A4898A00B0884A /* JEPasswordField.swift */,
+				C51CB59B29B707690082B32A /* JENavidationBar.swift */,
 				C55068C929A4C31C00B0884A /* GroceryView.swift */,
+				C51CB59529B5CC2D0082B32A /* DishRow.swift */,
+				C51CB59729B5DC2B0082B32A /* RestrauntItems.swift */,
 				C512A4E029A5FEE000F74D4C /* DeliveryView.swift */,
 				C512A4DE29A5FEC200F74D4C /* MainView.swift */,
+				C51CB59F29B729910082B32A /* HotelModel.swift */,
+				C50680EC29BA41C6003E6740 /* ApiData.swift */,
+				C51CB5A329B7317F0082B32A /* DishModel.swift */,
+				C550689629A4892100B0884A /* JESecuredField.swift */,
 				C512A4E229A6002800F74D4C /* CartView.swift */,
 				C5CE3EE829AC980200B37F77 /* ProfileView.swift */,
+				C51CB5A129B72CA20082B32A /* NetworkManager.swift */,
 				C55068CB29A5D68A00B0884A /* UIComponents.swift */,
-				C5CE3EF629AF526400B37F77 /* RestrauntModel.swift */,
 				C550689A29A48D1A00B0884A /* LoginView.swift */,
 				C550689C29A490B500B0884A /* PrimaryButton.swift */,
 				C550689E29A4918B00B0884A /* SecondaryButton.swift */,
 				C550689229A487DC00B0884A /* JETextField.swift */,
-				C550689629A4892100B0884A /* JESecuredField.swift */,
 				C550689429A488A300B0884A /* JEDateField.swift */,
 				C550688329A4879A00B0884A /* Assets.xcassets */,
 				C550688829A4879A00B0884A /* Persistence.swift */,
@@ -198,22 +216,28 @@
 				C55068A129A496D800B0884A /* SignupView.swift in Sources */,
 				C550689F29A4918B00B0884A /* SecondaryButton.swift in Sources */,
 				C55068CA29A4C31C00B0884A /* GroceryView.swift in Sources */,
+				C51CB5A429B7317F0082B32A /* DishModel.swift in Sources */,
 				C512A4E129A5FEE000F74D4C /* DeliveryView.swift in Sources */,
 				C550688929A4879A00B0884A /* Persistence.swift in Sources */,
 				C550689329A487DC00B0884A /* JETextField.swift in Sources */,
 				C550689D29A490B500B0884A /* PrimaryButton.swift in Sources */,
 				C550688229A4879800B0884A /* ContentView.swift in Sources */,
 				C550689B29A48D1A00B0884A /* LoginView.swift in Sources */,
-				C5CE3EF729AF526400B37F77 /* RestrauntModel.swift in Sources */,
+				C50680ED29BA41C6003E6740 /* ApiData.swift in Sources */,
 				C550689529A488A300B0884A /* JEDateField.swift in Sources */,
 				C512A4DF29A5FEC200F74D4C /* MainView.swift in Sources */,
+				C51CB59829B5DC2B0082B32A /* RestrauntItems.swift in Sources */,
 				C550689729A4892100B0884A /* JESecuredField.swift in Sources */,
 				C5CE3EED29ADBDB100B37F77 /* UserSettings.swift in Sources */,
+				C51CB5A229B72CA20082B32A /* NetworkManager.swift in Sources */,
 				C550688C29A4879A00B0884A /* JustEatQ.xcdatamodeld in Sources */,
+				C51CB59C29B707690082B32A /* JENavidationBar.swift in Sources */,
 				C55068A329A4A89C00B0884A /* GetStartedView.swift in Sources */,
 				C550689929A4898A00B0884A /* JEPasswordField.swift in Sources */,
+				C51CB5A029B729910082B32A /* HotelModel.swift in Sources */,
 				C5CE3EE929AC980200B37F77 /* ProfileView.swift in Sources */,
 				C55068CC29A5D68A00B0884A /* UIComponents.swift in Sources */,
+				C51CB59629B5CC2D0082B32A /* DishRow.swift in Sources */,
 				C550688029A4879800B0884A /* JustEatQApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
