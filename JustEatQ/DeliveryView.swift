@@ -34,6 +34,12 @@ struct DeliveryView: View {
                     .foregroundColor(Color("PrimaryColor"))
                 TextField("Restraunt name or text", text: $searchQuery)
                     .padding(.trailing, 24)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+                    .foregroundColor(Color("PrimaryColor"))
+                    .onChange(of: searchQuery, perform: { val in
+                        restraunts = searchRestraunt(query: val, data: apiData.restraunts)
+                    })
                 Text("│").foregroundColor(Color.gray).font(.title2)
                 Button(action: {
                     
@@ -96,48 +102,59 @@ struct DeliveryView: View {
             .sheet(isPresented: $showFilterDialog) {
                 FilterDialog(showConfirmationDialog: $showFilterDialog, isVeg: $vegSelected, minValue: $minCostValue, maxValue: $maxCostValue, selectedCategories: $selectedCategories, action: {
                     showFilterDialog = false
-                    restraunts = filterRestraunts(data: apiData.restraunts)
+                    restraunts = searchRestraunt(query: searchQuery, data: apiData.restraunts)
                     print("Filter: \(restraunts.count)")
                 }).presentationDetents([.height(UIScreen.main.bounds.height * 0.62)])
                 .presentationDragIndicator(.visible)
             }
     }
     
+    func searchRestraunt(query: String, data: [Restraunt]) -> [Restraunt] {
+        if query.count == 0 {
+            return filterRestraunts(data: data)
+        }
+        let result = data.filter { restraunt in
+            return restraunt.name!.lowercased().contains(query)
+        }
+        return filterRestraunts(data: result)
+    }
+    
     func filterRestraunts(data: [Restraunt]) -> [Restraunt] {
         var values: [Restraunt] = []
-
+        var categoryIsSelected = false
         for i in 0..<selectedCategories.count {
             if selectedCategories[i] {
+                categoryIsSelected = true
                 let result = data.filter { restraunt in
                     return restraunt.category == "\(i+1)"
                 }
                 values += result
             }
         }
-        
+        if values.count == 0 && !categoryIsSelected {
+            values = data
+        }
         if vegSelected {
             let result = values.filter { restraunt in
                 return restraunt.isVeg!
             }
             values = result
         }
-
         if minCostValue != "" {
             let result = values.filter { restraunt in
-                return Int(restraunt.price!)! >= Int(minCostValue)!
+                return Int(restraunt.price!)! >= Int(minCostValue) ?? 0
             }
             values = result
         }
-        
         if maxCostValue != "" {
             let result = values.filter { restraunt in
-                return Int(restraunt.price!)! <= Int(maxCostValue)!
+                return Int(restraunt.price!)! <= Int(maxCostValue) ?? 1000
             }
             values = result
         }
         return sortDialogValue != 0 ? sortRestraunts(sortType: sortDialogValue, data: values) : values
     }
-    
+
     func sortRestraunts(sortType: Int, data: [Restraunt]) -> [Restraunt] {
         switch sortType {
         case 1:
