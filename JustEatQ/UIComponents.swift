@@ -130,6 +130,7 @@ struct SectionHeader: View {
 
 struct DeliveryRow: View {
     var restraunt: Restraunt
+    var primaryFood: Food
     
     @State private var isFav = false
     
@@ -137,7 +138,7 @@ struct DeliveryRow: View {
         VStack {
             VStack {
                 HStack {
-                    Text("Strawberry Cake ◦ ₹249")
+                    Text("\(primaryFood.name!) ◦ ₹\(primaryFood.price!)")
                         .font(.caption.weight(.semibold))
                         .padding(.horizontal, 8).padding(.vertical, 4)
                         .background(Color.black.opacity(0.7))
@@ -190,11 +191,14 @@ struct DeliveryRow: View {
                 }
             }.padding()
             .frame(height: UIScreen.main.bounds.height * 0.25)
-            .background(Image("DeliveryFoodImage3")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: UIScreen.main.bounds.height * 0.25)
-                .clipped())
+            .background(AsyncImage(url: URL(string: primaryFood.image!)) { image in
+                image.resizable()
+            } placeholder: {
+                Color("PrimaryColor")
+            }
+            .aspectRatio(contentMode: .fill)
+            .frame(height: UIScreen.main.bounds.height * 0.25)
+            .clipped())
             HStack {
                 Image(systemName: "stopwatch")
                 Text("\(getEstimatedTime(restraunt.distance!)) ◦ \(restraunt.distance!) km")
@@ -486,7 +490,9 @@ struct FilterDialog: View {
                         for i in 0..<selectedCategories.count {
                             selectedCategories[i] = false
                         }
-                        showConfirmationDialog = false
+                        isVeg = false
+                        minValue = ""
+                        maxValue = ""
                     }.font(.title3.weight(.semibold))
                         .padding(.horizontal, 24).foregroundColor(Color("PrimaryColor"))
                     Button(action: action, label: {
@@ -504,16 +510,17 @@ struct FilterDialog: View {
 
 struct UIComponents_Previews: PreviewProvider {
     static var previews: some View {
-        DeliveryRow(restraunt: Restraunt(data: [
-            "D": false,
-            "F": "3",
-            "G": "250",
-            "H": true,
-            "I": "Huntersville, North Carolina, United States",
-            "id": 1,
-            "col1": "2",
-            "rating": "⭐️",
-            "fullName": "Sagar Ratna"]))
+//        DeliveryRow(restraunt: Restraunt(data: [
+//            "D": false,
+//            "F": "3",
+//            "G": "250",
+//            "H": true,
+//            "I": "Huntersville, North Carolina, United States",
+//            "id": 1,
+//            "col1": "2",
+//            "rating": "⭐️",
+//            "fullName": "Sagar Ratna"]))
+        Color.red
     }
 }
 

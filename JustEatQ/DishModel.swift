@@ -18,8 +18,8 @@ class Food: ObservableObject {
     var isVeg: Bool?
     
     init(data: [String: Any]) {
-        if let isVeg = data["isUser"] as? Bool {
-            self.isVeg = Bool(isVeg)
+        if let isVeg = data["isUser"] as? String {
+            self.isVeg = String(isVeg) == "true" ? true : false
         }
         if let price = data["col3"] as? String {
             self.price = String(price)

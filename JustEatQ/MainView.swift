@@ -38,7 +38,7 @@ struct MainView: View {
                     apiData.setRestraunts(restraunts: restraunts)
                     dataLoaded += 1
                 })
-                NetworkManager.shared.requestForApi(url: "https://retoolapi.dev/K9ecdS/akadbakadbambeboaasinabepureso", completionHandler: { data in
+                NetworkManager.shared.requestForApi(url: "https://retoolapi.dev/kzWdFZ/jaimatadi", completionHandler: { data in
                     guard let data = data as? [[String: Any]] else {return}
                     let foods: [Food] = data.map{Food(data: $0)}
                     apiData.setFoods(foods: Array(foods[0...19]))
@@ -47,7 +47,7 @@ struct MainView: View {
                 })
             }
         }
-//      https://retoolapi.dev/upVf9f/data (Restraunt) https://retoolapi.dev/K9ecdS/akadbakadbambeboaasinabepureso (Dish)
+//      https://retoolapi.dev/upVf9f/data (Restraunt) https://retoolapi.dev/kzWdFZ/jaimatadi (Dish)
     }
 }
 

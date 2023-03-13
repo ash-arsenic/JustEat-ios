@@ -86,7 +86,7 @@ struct DeliveryView: View {
                         NavigationLink(destination: RestrauntItems(restraunt: restraunt, foods: apiData.foods)) {
                             EmptyView()
                         }.opacity(0.0).buttonStyle(PlainButtonStyle())
-                        DeliveryRow(restraunt: restraunt)
+                        DeliveryRow(restraunt: restraunt, primaryFood: apiData.foods[restraunt.id! % 20])
                     }
                 }.listRowSeparator(.hidden)
             }.listStyle(.plain)
@@ -193,7 +193,7 @@ struct DeliveryView_Previews: PreviewProvider {
                 "col1": "⭐️⭐️⭐️⭐️⭐️",
                 "col2": "sweet beverage made by blending milk, ice cream, and flavorings or sweeteners such as butterscotch, caramel sauce, chocolate syrup, fruit syrup, or whole fruit into a thick, sweet, cold mixture.",
                 "col3": "250",
-                "isUser": true])]
+                "isUser": "true"])]
         ), restraunts: [Restraunt(data: [
             "D": false,
             "F": "3",

@@ -36,12 +36,15 @@ struct DishRow: View {
             }
             Spacer()
             VStack {
-                Image("DeliveryFoodImage3")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: UIScreen.main.bounds.width * 0.45, height: UIScreen.main.bounds.width * 0.45)
-                    .cornerRadius(20)
-                    .clipped()
+                AsyncImage(url: URL(string: food.image!)) { image in
+                    image.resizable()
+                } placeholder: {
+                    ProgressView()
+                }
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.main.bounds.width * 0.45, height: UIScreen.main.bounds.width * 0.45)
+                .cornerRadius(20)
+                .clipped()
                 Button(action: {
 
                 }, label: {
@@ -80,7 +83,7 @@ struct DishRow_Previews: PreviewProvider {
                 "col1": "⭐️⭐️⭐️⭐️⭐️",
                 "col2": "sweet beverage made by blending milk, ice cream, and flavorings or sweeteners such as butterscotch, caramel sauce, chocolate syrup, fruit syrup, or whole fruit into a thick, sweet, cold mixture.",
                 "col3": "250",
-                "isUser": true
+                "isUser": "true"
         ]))
     }
 }
