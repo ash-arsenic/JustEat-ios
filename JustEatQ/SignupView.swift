@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignupView: View {
-    
+
     @State private var emailShowError = false
     @State private var emailTF = ""
     @FocusState private var emailFocused
@@ -73,10 +73,7 @@ struct SignupView: View {
                         if validateName(name: nameTF) {
                             if validDate(day: ddTF, month: mmTF, year: yyTF) {
                                 if validatePswd(pswd: pswdTF) {
-                                    UserDefaults.standard.set(emailTF, forKey: "userEmail")
-                                    UserDefaults.standard.set(pswdTF, forKey: "userPswd")
-                                    UserDefaults.standard.set(nameTF, forKey: "userName")
-                                    UserDefaults.standard.set(ddTF + mmTF + yyTF, forKey: "userDOB")
+                                    PersistenceController.shared.saveUser(data: ["email": emailTF, "name": nameTF, "password": pswdTF, "dob": ddTF + mmTF + yyTF])
                                     showAlert = true
                                 } else {
                                     pswdShowError = true

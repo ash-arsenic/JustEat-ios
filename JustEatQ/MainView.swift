@@ -32,7 +32,7 @@ struct MainView: View {
         } else {
             ProgressView("Fetching Data")
             .onAppear() {
-                NetworkManager.shared.requestForApi(url: "https://retoolapi.dev/upVf9f/data", completionHandler: { data in
+                NetworkManager.shared.requestForApi(url: "https://retoolapi.dev/UY30s0/hum_name_rahe_hum_jo_the_kabhi", completionHandler: { data in
                     guard let data = data as? [[String: Any]] else {return}
                     let restraunts: [Restraunt] = data.map{Restraunt(data: $0)}
                     apiData.setRestraunts(restraunts: restraunts)

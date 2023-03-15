@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 class UserSettings: ObservableObject {
     @Published var loggedIn = false
+    @Published var user = User()
     
     func signIn() {
         loggedIn = true
@@ -16,5 +18,13 @@ class UserSettings: ObservableObject {
     
     func signOut() {
         loggedIn = false
+    }
+    
+    func setUser(user: User) {
+        self.user = user
+    }
+    
+    func setCartItems(items: [Cart]) {
+        self.user.cartItem?.addingObjects(from: items)
     }
 }

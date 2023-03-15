@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct DishRow: View {
+    @EnvironmentObject var settings: UserSettings
     @State private var descriptionLineLimit = 3
+    @State private var animateValue = 1.0
+    @State private var disableButton = false
+    var distance: String
+    
     var food: Food
     
     var body: some View {
@@ -49,7 +54,7 @@ struct DishRow: View {
 
                 }, label: {
                     ZStack {
-                        Text("ADD").foregroundColor(Color("PrimaryColor"))
+                        Text("ADD").foregroundColor(disableButton ? Color.gray : Color("PrimaryColor"))
                             .font(.headline.weight(.heavy))
                             .padding(.horizontal, 24).padding(8)
                         HStack {
@@ -57,25 +62,44 @@ struct DishRow: View {
                             VStack {
                                 Image(systemName: "plus")
                                     .fontWeight(.heavy)
-                                    .foregroundColor(Color("PrimaryColor"))
+                                    .foregroundColor(disableButton ? Color.gray : Color("PrimaryColor"))
                                 Spacer()
                             }
                         }
-                    }.padding(4)
+                    }.contentShape(Rectangle())
+                    .onTapGesture {
+                        addToCart()
+                        disableButton = true
+                    }
+                    .padding(4)
                     .fixedSize(horizontal: true, vertical: true)
-                    .background(Color("SecondaryColor"))
+                    .background(disableButton ? Color("LightGray") : Color("SecondaryColor"))
                     .cornerRadius(15)
-                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color("PrimaryColor"), lineWidth: 2))
+                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(disableButton ? Color.gray : Color("PrimaryColor"), lineWidth: 2))
                     .padding(.top, -36)
-                })
+                }).buttonStyle(CustomButtonStyle())
+                    .disabled(disableButton)
             }
         }.padding(.vertical)
+    }
+    
+    func addToCart() {
+        PersistenceController.shared.saveCartItem(data: ["name": food.name!, "veg": food.isVeg!, "price": food.price!, "user": settings.user, "distance": distance])
+    }
+}
+
+struct CustomButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .scaleEffect(configuration.isPressed ? 1.5 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
     }
 }
 
 struct DishRow_Previews: PreviewProvider {
     static var previews: some View {
-        DishRow(food: Food(data: [
+        DishRow(distance: "4", food: Food(data: [
             "D": "Shakes",
                 "E": "150",
                 "G": "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmilk-shake&psig=AOvVaw1O74IwZJMMMQ9jD_LOhePZ&ust=1678262309447000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCMip_7esyf0CFQAAAAAdAAAAABAZ",

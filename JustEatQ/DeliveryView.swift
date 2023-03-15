@@ -131,7 +131,7 @@ struct DeliveryView: View {
                 values += result
             }
         }
-        if values.count == 0 && !categoryIsSelected {
+        if !categoryIsSelected {
             values = data
         }
         if vegSelected {

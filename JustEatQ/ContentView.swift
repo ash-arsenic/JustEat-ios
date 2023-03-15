@@ -10,16 +10,21 @@ import CoreData
 
 struct ContentView: View {
     @EnvironmentObject var settings: UserSettings
+    @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
     
     var body: some View {
         NavigationView {
             if settings.loggedIn || UserDefaults.standard.bool(forKey: "loggedIn"){
-                MainView()
+                MainView().onAppear() {
+                    for user in users {
+                        if user.email == UserDefaults.standard.value(forKey: "userEmail") as? String {
+                            settings.setUser(user: user)
+                        }
+                    }
+                }
             } else {
                 GetStartedView()
             }
-        }.onAppear() {
-            
         }
     }
 }
@@ -28,6 +33,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .environmentObject(UserSettings())
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

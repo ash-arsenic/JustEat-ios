@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C500D53D29C13034008B12C9 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C500D53C29C13034008B12C9 /* UserData.swift */; };
 		C50680ED29BA41C6003E6740 /* ApiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50680EC29BA41C6003E6740 /* ApiData.swift */; };
 		C512A4DF29A5FEC200F74D4C /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4DE29A5FEC200F74D4C /* MainView.swift */; };
 		C512A4E129A5FEE000F74D4C /* DeliveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C512A4E029A5FEE000F74D4C /* DeliveryView.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C500D53C29C13034008B12C9 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		C50680EC29BA41C6003E6740 /* ApiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiData.swift; sourceTree = "<group>"; };
 		C512A4DE29A5FEC200F74D4C /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C512A4E029A5FEE000F74D4C /* DeliveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				C550687F29A4879800B0884A /* JustEatQApp.swift */,
 				C5CE3EEC29ADBDB100B37F77 /* UserSettings.swift */,
+				C500D53C29C13034008B12C9 /* UserData.swift */,
 				C55068A029A496D800B0884A /* SignupView.swift */,
 				C55068A229A4A89C00B0884A /* GetStartedView.swift */,
 				C550688129A4879800B0884A /* ContentView.swift */,
@@ -120,12 +123,12 @@
 				C512A4E229A6002800F74D4C /* CartView.swift */,
 				C5CE3EE829AC980200B37F77 /* ProfileView.swift */,
 				C51CB5A129B72CA20082B32A /* NetworkManager.swift */,
-				C55068CB29A5D68A00B0884A /* UIComponents.swift */,
 				C550689A29A48D1A00B0884A /* LoginView.swift */,
 				C550689C29A490B500B0884A /* PrimaryButton.swift */,
 				C550689E29A4918B00B0884A /* SecondaryButton.swift */,
 				C550689229A487DC00B0884A /* JETextField.swift */,
 				C550689429A488A300B0884A /* JEDateField.swift */,
+				C55068CB29A5D68A00B0884A /* UIComponents.swift */,
 				C550688329A4879A00B0884A /* Assets.xcassets */,
 				C550688829A4879A00B0884A /* Persistence.swift */,
 				C550688A29A4879A00B0884A /* JustEatQ.xcdatamodeld */,
@@ -214,6 +217,7 @@
 			files = (
 				C512A4E329A6002800F74D4C /* CartView.swift in Sources */,
 				C55068A129A496D800B0884A /* SignupView.swift in Sources */,
+				C500D53D29C13034008B12C9 /* UserData.swift in Sources */,
 				C550689F29A4918B00B0884A /* SecondaryButton.swift in Sources */,
 				C55068CA29A4C31C00B0884A /* GroceryView.swift in Sources */,
 				C51CB5A429B7317F0082B32A /* DishModel.swift in Sources */,

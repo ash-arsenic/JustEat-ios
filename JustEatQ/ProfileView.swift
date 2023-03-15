@@ -32,6 +32,7 @@ struct ProfileView: View {
                         Text("View Activity ▶").foregroundColor(Color("PrimaryColor"))
                     }.padding(.vertical, 2)
                 }
+                Spacer()
                 VStack {
                     Image(systemName: (name[name.startIndex].lowercased() + ".circle.fill"))
                         .resizable()

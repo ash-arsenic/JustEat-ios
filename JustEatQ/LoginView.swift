@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
+    @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
+    	
     @EnvironmentObject var userSettings: UserSettings
     
     @State private var emailShowError = false
@@ -50,10 +52,8 @@ struct LoginView: View {
                 
                 PrimaryButton(btnTitle: "LogIn") {
                     if authenticateUser(email: emailTF, pswd: pswdTF) {
-//                        loggedIn = true
                         userSettings.signIn()
                         UserDefaults.standard.set(true, forKey: "loggedIn")
-//                        print("Login view: \(settings.loggedIn)")
                     } else {
                         showAlertMSG = "Invalid Credentials"
                         showAlert = true
@@ -62,6 +62,9 @@ struct LoginView: View {
                     Button("OK", role: .cancel) {}
                 }.padding(.vertical)
             }.padding(32)
+                .onAppear() {
+                    print(users.count)
+                }
         }.navigationBarTitle("Sign In", displayMode: .inline)
     }
     func validateEmail(email: String) -> Bool {
@@ -77,8 +80,11 @@ struct LoginView: View {
     }
     
     func authenticateUser(email: String, pswd: String) -> Bool {
-        if email == UserDefaults.standard.value(forKey: "userEmail") as! String {
-            if pswd == UserDefaults.standard.value(forKey: "userPswd") as! String {
+        for user in users {
+            if email == user.email! && pswd == user.password!{
+                UserDefaults.standard.set(user.name!, forKey: "userName")
+                UserDefaults.standard.set(user.email!, forKey: "userEmail")
+                UserDefaults.standard.set(user.dob!, forKey: "userDob")
                 return true
             }
         }

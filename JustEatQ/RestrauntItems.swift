@@ -47,7 +47,7 @@ struct RestrauntItems: View {
             .shadow(radius: 6)
 
             ForEach(foods, id: \.id) { dish in
-                DishRow(food: dish)
+                DishRow(distance: restraunt.distance!,food: dish)
             }
         }.listStyle(.plain)
             .padding(.top, 2)

@@ -169,7 +169,6 @@ struct DeliveryRow: View {
                                 .font(.title.weight(.heavy))
                             
                             Image(systemName: "dot.square").foregroundColor(restraunt.isVeg! ? .green : .red)
-                                .background(Color.gray)
                             Spacer()
                         }
                         HStack {
@@ -191,14 +190,18 @@ struct DeliveryRow: View {
                 }
             }.padding()
             .frame(height: UIScreen.main.bounds.height * 0.25)
-            .background(AsyncImage(url: URL(string: primaryFood.image!)) { image in
-                image.resizable()
-            } placeholder: {
-                Color("PrimaryColor")
-            }
-            .aspectRatio(contentMode: .fill)
-            .frame(height: UIScreen.main.bounds.height * 0.25)
-            .clipped())
+            .background(
+                ZStack {
+                    AsyncImage(url: URL(string: primaryFood.image!)) { image in
+                        image.resizable()
+                    } placeholder: {
+                        Color("PrimaryColor")
+                    }
+                    Color.black.opacity(0.2)
+                }
+                .aspectRatio(contentMode: .fill)
+                .frame(height: UIScreen.main.bounds.height * 0.25)
+                .clipped())
             HStack {
                 Image(systemName: "stopwatch")
                 Text("\(getEstimatedTime(restraunt.distance!)) ◦ \(restraunt.distance!) km")
@@ -508,19 +511,45 @@ struct FilterDialog: View {
     }
 }
 
+struct JEStepper: View {
+    
+    @Binding var showRemoveAlert: Bool
+    var counter: String
+    var decrementAction: (()->Void)
+    var incrementAction: (()->Void)
+    var alertAction: (()->Void)
+    
+    var body: some View {
+        VStack { // Custom stepper
+            HStack {
+                Button("-", action: decrementAction).tint(Color("PrimaryColor"))
+                Text(String(counter))
+                    .padding(.horizontal, 4)
+                Button("+", action: incrementAction).tint(Color("PrimaryColor"))
+                    .alert(isPresented: $showRemoveAlert) {
+                        Alert(
+                            title: Text("Are you sure you want to remove this item from the caart"),
+                            message: Text("There is no undo"),
+                            primaryButton: .destructive(Text("Remove"), action: alertAction),
+                            secondaryButton: .cancel()
+                        )
+                    }
+
+            }.padding(.horizontal, 16).padding(.vertical, 2)
+                .background(Color("SecondaryColor"))
+                .cornerRadius(5)
+                .overlay (
+                    RoundedRectangle(cornerRadius: 8, style: .continuous)
+                        .stroke(Color("PrimaryColor"), lineWidth: 2)
+                )
+        }
+    }
+}
+
 struct UIComponents_Previews: PreviewProvider {
     static var previews: some View {
-//        DeliveryRow(restraunt: Restraunt(data: [
-//            "D": false,
-//            "F": "3",
-//            "G": "250",
-//            "H": true,
-//            "I": "Huntersville, North Carolina, United States",
-//            "id": 1,
-//            "col1": "2",
-//            "rating": "⭐️",
-//            "fullName": "Sagar Ratna"]))
-        Color.red
+//        JEStepper()
+        Color.blue
     }
 }
 
