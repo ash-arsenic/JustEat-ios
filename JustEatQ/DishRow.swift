@@ -12,9 +12,17 @@ struct DishRow: View {
     @State private var descriptionLineLimit = 3
     @State private var animateValue = 1.0
     @State private var disableButton = false
-    var distance: String
+    @State private var showDSSAlert = false
+    @Binding var showCartNotEmptyAlert: Bool
+    @Binding var currentFoodItemId: String
     
+    var distance: String
+    var restrauntId: String
     var food: Food
+    var itemQuanity: Int
+    var incrementAction: (()->())
+    var decrementAction: (()->())
+    var addBtnAction: (()->())
     
     var body: some View {
         HStack{
@@ -50,42 +58,65 @@ struct DishRow: View {
                 .frame(width: UIScreen.main.bounds.width * 0.45, height: UIScreen.main.bounds.width * 0.45)
                 .cornerRadius(20)
                 .clipped()
-                Button(action: {
+                if itemQuanity == 0 {
+                    Button(action: {
 
-                }, label: {
-                    ZStack {
-                        Text("ADD").foregroundColor(disableButton ? Color.gray : Color("PrimaryColor"))
-                            .font(.headline.weight(.heavy))
-                            .padding(.horizontal, 24).padding(8)
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Image(systemName: "plus")
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(disableButton ? Color.gray : Color("PrimaryColor"))
+                    }, label: {
+                        ZStack {
+                            Text("ADD").foregroundColor(disableButton ? Color.gray : Color("PrimaryColor"))
+                                .font(.headline.weight(.heavy))
+                                .padding(.horizontal, 24).padding(8)
+                            HStack {
                                 Spacer()
+                                VStack {
+                                    Image(systemName: "plus")
+                                        .fontWeight(.heavy)
+                                        .foregroundColor(disableButton ? Color.gray : Color("PrimaryColor"))
+                                    Spacer()
+                                }
                             }
+                        }.contentShape(Rectangle())
+                        .onTapGesture {
+                            currentFoodItemId = String(food.id!)
+                            addBtnAction()
                         }
-                    }.contentShape(Rectangle())
-                    .onTapGesture {
-                        addToCart()
-                        disableButton = true
-                    }
-                    .padding(4)
-                    .fixedSize(horizontal: true, vertical: true)
-                    .background(disableButton ? Color("LightGray") : Color("SecondaryColor"))
-                    .cornerRadius(15)
-                    .overlay(RoundedRectangle(cornerRadius: 15).stroke(disableButton ? Color.gray : Color("PrimaryColor"), lineWidth: 2))
-                    .padding(.top, -36)
-                }).buttonStyle(CustomButtonStyle())
-                    .disabled(disableButton)
+                        .padding(4)
+                        .fixedSize(horizontal: true, vertical: true)
+                        .background(disableButton ? Color("LightGray") : Color("SecondaryColor"))
+                        .cornerRadius(15)
+                        .overlay(RoundedRectangle(cornerRadius: 15).stroke(disableButton ? Color.gray : Color("PrimaryColor"), lineWidth: 2))
+                        .padding(.top, -36)
+                    }).buttonStyle(CustomButtonStyle())
+                        .disabled(disableButton)
+                } else {
+                    HStack {
+                        Button("-", action: decrementAction).tint(Color("PrimaryColor"))
+                            .onTapGesture {
+                                currentFoodItemId = String(food.id!)
+                            decrementAction()
+                        }
+                        
+                        Text(String(itemQuanity)).fontWeight(.bold)
+                            .padding(.horizontal, 4)
+                        Button("+", action: incrementAction).tint(Color("PrimaryColor"))
+                            .onTapGesture {
+                                currentFoodItemId = String(food.id!)
+                            incrementAction()
+                        }
+                    }.font(.title).foregroundColor(Color("PrimaryColor"))
+                    .padding(.horizontal, 16).padding(.vertical, 2)
+                        .background(Color("SecondaryColor"))
+                        .cornerRadius(5)
+                        .overlay (
+                            RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                .stroke(Color("PrimaryColor"), lineWidth: 2)
+                        ).padding(.top, -24)
+                }
+                
             }
         }.padding(.vertical)
     }
     
-    func addToCart() {
-        PersistenceController.shared.saveCartItem(data: ["name": food.name!, "veg": food.isVeg!, "price": food.price!, "user": settings.user, "distance": distance])
-    }
 }
 
 struct CustomButtonStyle: ButtonStyle {
@@ -99,15 +130,16 @@ struct CustomButtonStyle: ButtonStyle {
 
 struct DishRow_Previews: PreviewProvider {
     static var previews: some View {
-        DishRow(distance: "4", food: Food(data: [
-            "D": "Shakes",
-                "E": "150",
-                "G": "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmilk-shake&psig=AOvVaw1O74IwZJMMMQ9jD_LOhePZ&ust=1678262309447000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCMip_7esyf0CFQAAAAAdAAAAABAZ",
-                "id": 1,
-                "col1": "⭐️⭐️⭐️⭐️⭐️",
-                "col2": "sweet beverage made by blending milk, ice cream, and flavorings or sweeteners such as butterscotch, caramel sauce, chocolate syrup, fruit syrup, or whole fruit into a thick, sweet, cold mixture.",
-                "col3": "250",
-                "isUser": "true"
-        ]))
+        VStack{}
+//        DishRow(addedToCart: .constant(false), distance: "4", restrauntId: "22", food: Food(data: [
+//            "D": "Shakes",
+//            "E": "150",
+//            "G": "https://www.google.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fmilk-shake&psig=AOvVaw1O74IwZJMMMQ9jD_LOhePZ&ust=1678262309447000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCMip_7esyf0CFQAAAAAdAAAAABAZ",
+//            "id": 1,
+//            "col1": "⭐️⭐️⭐️⭐️⭐️",
+//            "col2": "sweet beverage made by blending milk, ice cream, and flavorings or sweeteners such as butterscotch, caramel sauce, chocolate syrup, fruit syrup, or whole fruit into a thick, sweet, cold mixture.",
+//            "col3": "250",
+//            "isUser": "true"
+//        ]))
     }
 }

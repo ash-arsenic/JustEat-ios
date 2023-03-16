@@ -20,6 +20,7 @@ struct CartItem: Identifiable {
 struct CartView: View {
     
     @EnvironmentObject var settings: UserSettings
+    
     @State private var cartItems: [Cart] = []
     @State private var refreshId = UUID()
 //  For going back to delivery page
@@ -28,9 +29,9 @@ struct CartView: View {
     //    For estimated time
     //    Sample Data for list
     @State private var items = [CartItem(name: "Belgian Brownie Thick Shake", veg: true, price: 310.0, quantity: "[500 Ml]", counter: 1, totalPrice: 310.0),
-                                CartItem(name: "Oreo Waffle", veg: false, price: 125.0, quantity: "Single, Hot Fudge", counter: 1, totalPrice: 125.0)]
+    CartItem(name: "Oreo Waffle", veg: false, price: 125.0, quantity: "Single, Hot Fudge", counter: 1, totalPrice: 125.0)]
     @State private var showRemoveAlert = false
-    @State private var currentCartItemId: UUID?
+    @State private var currentCartItemId: String?
     
 //    For delivery distance
     @State private var deliveryDistance = 0
@@ -101,19 +102,19 @@ struct CartView: View {
                                                 HStack {
                                                     Image(systemName: "dot.square")
                                                         .foregroundColor(item.isVeg ? Color.green : Color.red)
-                                                    Text(item.name!)
+                                                    Text(item.name ?? "pp")
                                                         .fontWeight(.semibold)
                                                         .font(.subheadline)
                                                     Spacer()
                                                 }
                                                 HStack {
-                                                    Text("₹\(item.price!)")
+                                                    Text("₹\(item.price ?? "0")")
                                                         .fontWeight(.semibold)
                                                         .font(.subheadline)
                                                     Spacer()
                                                 }.padding(.leading, 25)
                                                 
-                                                Text("\(item.distance!) km far away")
+                                                Text("\(item.distance ?? "gh") km far away")
                                                     .padding(.leading, 25)
                                                     .frame(maxWidth: .infinity, alignment: .leading)
                                                     .foregroundColor(Color.gray)
@@ -150,14 +151,14 @@ struct CartView: View {
                                                         RoundedRectangle(cornerRadius: 8, style: .continuous)
                                                             .stroke(Color("PrimaryColor"), lineWidth: 2)
                                                     )
-                                                Text("₹\(item.quantity * Int64(item.price!)!)")
+                                                Text("₹\(item.quantity * Int64(item.price ?? "0")!)")
                                                     .fontWeight(.semibold)
                                                     .font(.subheadline)
                                             }
                                         }.padding()
                                         Divider()
                                     }
-                                }.id(refreshId)
+                                }.id(settings.refreshId)
                                 .background(Color.white)
                                 .cornerRadius(15)
                                 
@@ -399,7 +400,7 @@ struct CartView: View {
         }
     }
     
-    func updateCartItems(id: UUID, inc: Bool) {
+    func updateCartItems(id: String, inc: Bool) {
         var ind: Int = 0
         for i in 0..<cartItems.count {
             if cartItems[i].cartId == id {
@@ -413,7 +414,7 @@ struct CartView: View {
         } else {
             cartItems[ind].quantity = cartItems[ind].quantity - 1
         }
-        refreshId = UUID()
+        settings.refreshCart()
 //        for i in 0..<(settings.user.cartItem?.allObjects as! [Cart]).count {
 //            if((settings.user.cartItem?.allObjects as! [Cart])[i].id == id) {
 //                ind = i
@@ -434,7 +435,7 @@ struct CartView: View {
         updateBillinigDetails()
     }
     
-    func deleteCartItem(id: UUID) {
+    func deleteCartItem(id: String) {
         var ind = -1
         for i in 0..<cartItems.count {
             if(cartItems[i].cartId == id) {
@@ -450,9 +451,8 @@ struct CartView: View {
         } else {
             print("ID not found")
         }
-        if(items.count == 0) {
-            cartIsEmpty = true
-        }
+        settings.refreshCart()
+//
         updateBillinigDetails()
     }
     

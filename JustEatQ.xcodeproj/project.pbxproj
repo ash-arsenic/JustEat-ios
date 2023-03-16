@@ -18,6 +18,7 @@
 		C51CB5A029B729910082B32A /* HotelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB59F29B729910082B32A /* HotelModel.swift */; };
 		C51CB5A229B72CA20082B32A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB5A129B72CA20082B32A /* NetworkManager.swift */; };
 		C51CB5A429B7317F0082B32A /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51CB5A329B7317F0082B32A /* DishModel.swift */; };
+		C523E63F29C1E5B100CB9823 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C523E63E29C1E5B100CB9823 /* Launch Screen.storyboard */; };
 		C550688029A4879800B0884A /* JustEatQApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550687F29A4879800B0884A /* JustEatQApp.swift */; };
 		C550688229A4879800B0884A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C550688129A4879800B0884A /* ContentView.swift */; };
 		C550688429A4879A00B0884A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C550688329A4879A00B0884A /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		C51CB59F29B729910082B32A /* HotelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelModel.swift; sourceTree = "<group>"; };
 		C51CB5A129B72CA20082B32A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C51CB5A329B7317F0082B32A /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
+		C523E63E29C1E5B100CB9823 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C550687C29A4879800B0884A /* JustEatQ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustEatQ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C550687F29A4879800B0884A /* JustEatQApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustEatQApp.swift; sourceTree = "<group>"; };
 		C550688129A4879800B0884A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				C51CB59B29B707690082B32A /* JENavidationBar.swift */,
 				C55068C929A4C31C00B0884A /* GroceryView.swift */,
 				C51CB59529B5CC2D0082B32A /* DishRow.swift */,
+				C523E63E29C1E5B100CB9823 /* Launch Screen.storyboard */,
 				C51CB59729B5DC2B0082B32A /* RestrauntItems.swift */,
 				C512A4E029A5FEE000F74D4C /* DeliveryView.swift */,
 				C512A4DE29A5FEC200F74D4C /* MainView.swift */,
@@ -203,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C523E63F29C1E5B100CB9823 /* Launch Screen.storyboard in Resources */,
 				C550688729A4879A00B0884A /* Preview Assets.xcassets in Resources */,
 				C550688429A4879A00B0884A /* Assets.xcassets in Resources */,
 			);

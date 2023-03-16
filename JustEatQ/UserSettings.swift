@@ -11,6 +11,7 @@ import Combine
 class UserSettings: ObservableObject {
     @Published var loggedIn = false
     @Published var user = User()
+    @Published var refreshId = UUID()
     
     func signIn() {
         loggedIn = true
@@ -22,6 +23,10 @@ class UserSettings: ObservableObject {
     
     func setUser(user: User) {
         self.user = user
+    }
+    
+    func refreshCart() {
+        refreshId = UUID()
     }
     
     func setCartItems(items: [Cart]) {

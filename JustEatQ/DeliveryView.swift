@@ -45,14 +45,14 @@ struct DeliveryView: View {
                     
                 }, label: {
                     Image(systemName: "mic")
-                        .font(.title3)
-                        .foregroundColor(Color("PrimaryColor"))
+                    .font(.title3)
+                    .foregroundColor(Color("PrimaryColor"))
                 })
-            }.padding()
+            }.padding(10)
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(color: Color("LightGray"), radius: 8)
-                .padding()
+                .padding(.horizontal).padding(.top).padding(.bottom, 4)
             HStack {
                 Button(action: {
                     showSortDialog = true

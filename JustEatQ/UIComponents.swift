@@ -168,7 +168,7 @@ struct DeliveryRow: View {
                             Text(restraunt.name!).foregroundColor(.white)
                                 .font(.title.weight(.heavy))
                             
-                            Image(systemName: "dot.square").foregroundColor(restraunt.isVeg! ? .green : .red)
+//                            Image(systemName: "dot.square").foregroundColor(restraunt.isVeg! ? .green : .red)
                             Spacer()
                         }
                         HStack {
@@ -189,7 +189,7 @@ struct DeliveryRow: View {
                     }
                 }
             }.padding()
-            .frame(height: UIScreen.main.bounds.height * 0.25)
+            .frame(height: UIScreen.main.bounds.height * 0.22)
             .background(
                 ZStack {
                     AsyncImage(url: URL(string: primaryFood.image!)) { image in
@@ -200,7 +200,7 @@ struct DeliveryRow: View {
                     Color.black.opacity(0.2)
                 }
                 .aspectRatio(contentMode: .fill)
-                .frame(height: UIScreen.main.bounds.height * 0.25)
+                .frame(height: UIScreen.main.bounds.height * 0.22)
                 .clipped())
             HStack {
                 Image(systemName: "stopwatch")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Cart" representedClassName="Cart" syncable="YES" codeGenerationType="class">
-        <attribute name="cartId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="cartId" optional="YES" attributeType="String"/>
         <attribute name="distance" optional="YES" attributeType="String"/>
         <attribute name="isVeg" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
@@ -14,6 +14,7 @@
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="restrauntId" optional="YES" attributeType="String"/>
         <relationship name="cartItem" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Cart" inverseName="user" inverseEntity="Cart"/>
     </entity>
 </model>

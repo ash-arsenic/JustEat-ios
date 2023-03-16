@@ -42,14 +42,19 @@ class PersistenceController {
     
     func saveCartItem(data: [String: Any]) {
         let cart = Cart(context: context)
-        cart.cartId = UUID()
+        cart.cartId = data["cartId"] as? String
         cart.name = data["name"] as? String
         cart.quantity = 1
         cart.isVeg = (data["veg"] as? Bool)!
         cart.price = data["price"] as? String
         cart.user = data["user"] as? User
+        cart.user?.restrauntId = data["restrauntId"] as? String
         cart.distance = data["distance"] as? String
         save()
+    }
+    
+    func delteCompleteCart() {
+        
     }
     
     func deleteCartItem(item: Cart) {
