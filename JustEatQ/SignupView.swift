@@ -97,6 +97,12 @@ struct SignupView: View {
                         self.presentation.wrappedValue.dismiss()
                     }
                 }
+                HStack {
+                    Text("Already have an Account?").font(.subheadline)
+                    Button("Sign in") {
+                        self.presentation.wrappedValue.dismiss()
+                    }.tint(Color("TertiaryColor"))
+                }.font(.title3.weight(.semibold))
             }.padding(32)
         }.navigationBarTitle("Sign Up", displayMode: .inline)
     }
@@ -113,10 +119,9 @@ struct SignupView: View {
     }
     
     func validateName(name: String) -> Bool {
-        if name.count < 3 {
-            return false
-        }
-        return true
+        let regEx = "\\w{2,26}"
+        let test = NSPredicate(format:"SELF MATCHES %@", regEx)
+        return test.evaluate(with: name)
     }
     
     func validDate(day: String, month: String, year: String) -> Bool {
@@ -138,7 +143,6 @@ struct SignupView: View {
         if day < 1 || day > m[month-1] {
             return false
         }
-        
         return true
     }
 }

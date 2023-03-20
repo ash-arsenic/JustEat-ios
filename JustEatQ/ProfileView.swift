@@ -142,6 +142,7 @@ struct ProfileView: View {
             }
         }.padding(.horizontal, 8)
         .background(Color("SecondaryColor"))
+        .navigationBarTitle("Your Profile")
     }
 }
 

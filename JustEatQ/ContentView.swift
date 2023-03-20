@@ -7,10 +7,17 @@
 
 import SwiftUI
 import CoreData
+import UIKit
 
 struct ContentView: View {
     @EnvironmentObject var settings: UserSettings
     @FetchRequest(sortDescriptors: []) var users: FetchedResults<User>
+    
+    init() {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(named: "PrimaryColor")!]
+
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor(named: "PrimaryColor")!]
+        }
     
     var body: some View {
         NavigationView {

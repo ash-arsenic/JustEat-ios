@@ -58,6 +58,7 @@ struct JEDateField: View {
                         if data.count > 2 {
                             ddTF.popLast()
                         }
+                        
                         if let char = data.cString(using: String.Encoding.utf8) {
                             let isBackSpace = strcmp(char, "\\b")
                             if (isBackSpace == -92) {

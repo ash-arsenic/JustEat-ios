@@ -44,13 +44,11 @@ struct RestrauntItems: View {
                             .font(.subheadline.weight(.semibold))
                         Text("Reviews").foregroundColor(Color.gray)
                             .font(.caption)
-                            .padding(.horizontal, 8)
+                            .padding(.bottom, 8)
                     }
                 }.cornerRadius(20)
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black.opacity(0.3), lineWidth: 1))
+                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.black.opacity(0.3), lineWidth: 1))
             }.contentShape(Rectangle())
-            .onTapGesture {
-            }
             .padding()
             .background(Color.white)
             .cornerRadius(15)

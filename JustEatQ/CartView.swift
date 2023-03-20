@@ -266,7 +266,7 @@ struct CartView: View {
                                 VStack(alignment: .leading) {
                                     Text("Your Details")
                                         .fontWeight(.semibold)
-                                    Text("Shanaya Sinha, 1234567")
+                                    Text("\(settings.user.name!), \(settings.user.email!)")
                                         .foregroundColor(Color.gray)
                                 }
                                 Spacer()
@@ -276,9 +276,10 @@ struct CartView: View {
                                     Image(systemName: "chevron.forward")
                                         .foregroundColor(Color.gray)
                                 })
-                            }.padding()
-                                .background(Color.white)
-                                .cornerRadius(15)
+                            }.contentShape(Rectangle())
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(15)
                             
                             // Order for someone else
                             HStack {
